@@ -57,7 +57,8 @@ public class RaycastFollow : MonoBehaviour
 
         if (targetPosition != initialPosition && distance < attackRadius)
         {
-            Debug.Log("Stop");
+            //Debug.Log("Hit");
+
         }
         else
         {
@@ -73,8 +74,6 @@ public class RaycastFollow : MonoBehaviour
 
         Debug.DrawLine(transform.position, targetPosition, Color.green);
         
-            
-
     }
 
     private void OnDrawGizmosSelected()
@@ -83,4 +82,29 @@ public class RaycastFollow : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, visionRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // no rigidbody
+        if (body == null || body.isKinematic)
+            return;
+
+        // We dont want to push objects below us
+        if (hit.moveDirection.y < -0.3f)
+            return;
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+
+        // Apply the push
+        body.velocity = pushDir * 0.5f;
+    }
+
 }
+

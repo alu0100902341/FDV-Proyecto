@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerPhysics : MonoBehaviour
 {
     Rigidbody2D rb;
     KeyCode lastKeyPressed;
     [SerializeField] private float speed_;
     Vector2 movement;
+
+
 
     // Usar awake cuando no se requieren datos de otros scripts. Awake se ejecuta antes que start.
     // Es bueno utilizarlo para inicializaciones y luego acceder esos valores en el start de otro script.

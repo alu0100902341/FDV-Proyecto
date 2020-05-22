@@ -112,9 +112,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8279770790654866220}
   - component: {fileID: 2139667483772428724}
+  - component: {fileID: 2945846019072392572}
   - component: {fileID: 4660955940607643262}
-  - component: {fileID: 5609435526990466891}
-  - component: {fileID: 3099066921719924600}
+  - component: {fileID: 8848811686528618532}
   m_Layer: 0
   m_Name: TreeMan
   m_TagString: Enemy
@@ -158,6 +158,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &2945846019072392572
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253058785209736026}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.16801453, y: -0.07531738}
+  m_Size: {x: 1.2531738, y: 1.2531738}
+  m_Direction: 0
 --- !u!61 &4660955940607643262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +187,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12003136, y: -0.12867975}
+  m_Offset: {x: -0.15475655, y: -0.49166203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -182,9 +198,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49988174, y: 0.7309942}
+  m_Size: {x: 1.123394, y: 0.4667492}
   m_EdgeRadius: 0
---- !u!114 &5609435526990466891
+--- !u!114 &8848811686528618532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,16 +215,3 @@ MonoBehaviour:
   visionRadius: 3.5
   attackRadius: 1
   speed: 1.5
---- !u!114 &3099066921719924600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4253058785209736026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804d191d933530e4588a1bf11c63239e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: {fileID: 920593745753819956, guid: 18a403c47325ab147acda8ec5a8774eb, type: 3}
